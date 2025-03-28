@@ -17,13 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
 				$('.typecho-head-nav .operate').eq(0).prepend('<a id="tonav" href="javascript:;"><i class="zm zm-caidan"></i></a>'),
 				$('#typecho-nav-list').before('<div class="proup"></div>'),
 				$('#tonav').click(function (event) {
-					event.stopPropagation(), $('#typecho-nav-list').toggle();
+					event.stopPropagation();
+					$('#typecho-nav-list').toggleClass('show');
 					$('.proup').toggle();
-				}),
+				});
 				$(document).click(function (event) {
 					var _con = $('#typecho-nav-list');
 					if (!_con.is(event.target) && _con.has(event.target).length == 0) {
-						$('#typecho-nav-list').hide();
+						$('#typecho-nav-list').removeClass('show');
 						$('.proup').hide();
 					}
 				});
